@@ -1,4 +1,4 @@
-// Readz Aleizn@BrunoSobrino - descargas-spotifypro.js
+// 𝐁𝐨𝐭 𝐕𝐞𝐧𝐭𝐚𝐬𝐏𝐞𝐫𝐳𝐳𝐳@BrunoSobrino - descargas-spotifypro.js
 // Creditos de los tags a @darlyn1234 y diseño a @ALBERTO9883
 // Este plugins descarga por texto, album, track o playlist de spotify.
 import pkg from 'sanzy-spotifydl'; 
