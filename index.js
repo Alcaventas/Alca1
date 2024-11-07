@@ -61,7 +61,7 @@ async function start(file) {
     gradient: ['red', 'magenta'],
   });
 
-  say(`Bot creado por 𝐁𝐨𝐭 𝐕𝐞𝐧𝐭𝐚𝐬𝐏𝐞𝐫𝐳𝐳𝐳`, {
+  say(`Bot creado por ✔️𝗕𝗼𝘁|𝗔𝗹𝗰𝗮`, {
     font: 'console',
     align: 'center',
     gradient: ['red', 'magenta'],
