@@ -16,52 +16,17 @@ global.isBaileysFail = false
 global.defaultLenguaje = 'es';
 
 global.owner = [
-  ['529612683719', '👑 Mystic - Creador 👑', true],
-  ['529612683719', '💫 Mystic - Collaborator 2 💫', true],
-  ['529612683719', '💫 Mystic - Collaborator 3 💫', true],
-  ['529612683719', '💫 Mystic - Collaborator 4 💫', true],
-  ['529612683719', '💫 Mystic - Collaborator 5 💫', true],
-  ['529612683719', '💫 Mystic - Collaborator 6 💫', true],
-  ['529612683719', '💫 Mystic - Rey Endymion 💫', false],
-  ['529612683719', '💫 Mystic - Collaborator 8 💫', true],
-  ['529612683719', '💫 Mystic - OfcDiego', true],
-  ['529612683719', '💫 Mystic - By Alba070503 💫', true],
-  ['529612683719', '💫 Mystic - Gabriel Ofc', true], 
-  ['529612683719', '💫 Mystic - Tester Fabri115💫', true],
-  ['529612683719', '💫 Mystic - Saad 💫', true], 
-  ['529612683719', '💫 Mystic - Sarethh 💫', true],
-  ['529612683719'],
-  ['529612683719'],
-  ['529612683719'],
-  ['529612683719'],
-  ['529612683719'], 
-  ['529612683719'],  
-  ['529612683719'],
-  ['529612683719'],
-  ['529612683719'],
-  ['529612683719'], 
-  ['529612683719'], 
-  ['529612683719'],
-  ['529612683719'],
-  ['529612683719'],
-  ['529612683719'],
-  ['529612683719'], 
-  ['529612683719'],
-  ['529612683719'],
-  ['529612683719'],
-  ['529612683719'],
-  ['529612683719'],
-  ['529612683719']
+  ['528241264763', 'Alcashop', true],
 ];
 
-global.suittag = ['529612683719'];
-global.prems = ['529612683719'];
+global.suittag = ['528241264763'];
+global.prems = ['528241264763'];
 
 // API
 global.BASE_API_DELIRIUS = "https://deliriusapi-official.vercel.app";
 
 global.packname = 'Sticker';
-global.author = 'https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31';
+global.author = '✔️𝗔𝗹𝗰𝗮𝗯𝗼𝘁';
 global.wm = 'https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31';
 global.titulowm = 'https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31';
 global.titulowm2 = `https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31`
