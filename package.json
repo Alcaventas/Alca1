@@ -1,5 +1,5 @@
 {
-  "name": "𝐁𝐨𝐭 𝐕𝐞𝐧𝐭𝐚𝐬𝐏𝐞𝐫𝐳𝐳𝐳",
+  "name": "Alcashop",
   "version": "1.0.0",
   "description": "Un chatbot automatizado para WhatsApp basado en Node.js, que permite realizar múltiples funciones y personalizaciones en la plataforma.",
   "main": "index.js",
@@ -16,16 +16,16 @@
     "eslint": "eslint .",
     "eslintfix": "eslint --fix ."
   },
-  "homepage": "https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31",
+  "homepage": "https://chat.whatsapp.com/FFY1WsOvcBy6tBhl2ARTb0",
   "author": {
     "name": "BrunoSobrino"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31.git"
+    "url": "git+https://chat.whatsapp.com/FFY1WsOvcBy6tBhl2ARTb0"
   },
   "bugs": {
-    "url": "https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31/issues"
+    "url": "https://chat.whatsapp.com/FFY1WsOvcBy6tBhl2ARTb0/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
