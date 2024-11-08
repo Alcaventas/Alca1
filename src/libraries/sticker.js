@@ -143,7 +143,6 @@ function sticker6(img, url) {
 /**
  * Add WhatsApp JSON Exif Metadata
  * Taken from https://github.com/pedroslopez/whatsapp-web.js/pull/527/files
- * new json made by https://github.com/Skidy89
  * @param {Buffer} webpSticker 
  * @param {String} packname 
  * @param {String} author 
@@ -151,23 +150,10 @@ function sticker6(img, url) {
  * @param {Object} extra 
  * @returns 
  */
-async function addExif(webpSticker, packname, author, categories = [''], metadata) {
+async function addExif(webpSticker, packname, author, categories = [''], extra = {}) {
   const img = new webp.Image();
-  const stickerPackId = 'MYSTIC' + crypto.randomBytes(12).toString('hex').toUpperCase()
-  const json = {
-      "sticker-pack-id": metadata.packId ? metadata.packId : `${stickerPackId}`,
-      "sticker-pack-name": packname ? packname : undefined,
-      "sticker-pack-publisher": author ? author : undefined,
-      "android-app-store-link": metadata.androidAppStoreLink ? metadata.androidAppStoreLink : undefined,
-      "ios-app-store-link": metadata.iosAppStoreLink ? metadata.iosAppStoreLink : undefined,
-      "is-ai-sticker": metadata.isAiSticker ? 1 : undefined,
-      "is-first-party-sticker": metadata.isFirstPartySticker ? 1 : undefined,
-      "accessibility-text": metadata.accessibilityText ? metadata.accessibilityText : undefined,
-      "avatar-sticker-template-id": metadata.templateId ? metadata.templateId : undefined,
-      "is-avatar-sticker": metadata.isAvatarSticker ? 1 : undefined,
-      "sticker-maker-source-type": metadata.stickerMakerSourceType ? metadata.stickerMakerSourceType : undefined,
-      "emojis": categories ? categories : undefined
-  };
+  const stickerPackId = crypto.randomBytes(32).toString('hex');
+  const json = { 'sticker-pack-id': stickerPackId, 'sticker-pack-name': packname, 'sticker-pack-publisher': author, 'emojis': categories, ...extra };
   const exifAttr = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00]);
   const jsonBuffer = Buffer.from(JSON.stringify(json), 'utf8');
   const exif = Buffer.concat([exifAttr, jsonBuffer]);
