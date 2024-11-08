@@ -13,7 +13,7 @@ import store from './store.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
- * @type {import("baileys")}
+ * @type {import('@whiskeysockets/baileys')}
  */
 const {
     default: _makeWaSocket,
@@ -31,11 +31,11 @@ const {
     getAggregateVotesInPollMessage, 
     prepareWAMessageMedia,
     WA_DEFAULT_EPHEMERAL
-} = (await import("baileys")).default
+} = (await import('@whiskeysockets/baileys')).default
 
 export function makeWASocket(connectionOptions, options = {}) {
   /**
-     * @type {import("baileys").WASocket | import("baileys").WALegacySocket}
+     * @type {import('@whiskeysockets/baileys').WASocket | import('@whiskeysockets/baileys').WALegacySocket}
      */
   const conn = (global.opts['legacy'] ? makeWALegacySocket : _makeWaSocket)(connectionOptions);
 
@@ -188,7 +188,7 @@ export function makeWASocket(connectionOptions, options = {}) {
              * @param {String|Buffer} path
              * @param {String} filename
              * @param {String} caption
-             * @param {import("baileys").proto.WebMessageInfo} quoted
+             * @param {import('@whiskeysockets/baileys').proto.WebMessageInfo} quoted
              * @param {Boolean} ptt
              * @param {Object} options
              */
@@ -237,7 +237,7 @@ export function makeWASocket(connectionOptions, options = {}) {
           fileName: filename || pathFile.split('/').pop(),
         };
         /**
-                 * @type {import("baileys").proto.WebMessageInfo}
+                 * @type {import('@whiskeysockets/baileys').proto.WebMessageInfo}
                  */
         let m;
         try {
@@ -258,7 +258,7 @@ export function makeWASocket(connectionOptions, options = {}) {
              * Send Contact
              * @param {String} jid
              * @param {String[][]|String[]} data
-             * @param {import("baileys").proto.WebMessageInfo} quoted
+             * @param {import('@whiskeysockets/baileys').proto.WebMessageInfo} quoted
              * @param {Object} options
              */
       async value(jid, data, quoted, options) {
@@ -297,7 +297,7 @@ END:VCARD
              * Reply to a message
              * @param {String} jid
              * @param {String|Buffer} text
-             * @param {import("baileys").proto.WebMessageInfo} quoted
+             * @param {import('@whiskeysockets/baileys').proto.WebMessageInfo} quoted
              * @param {Object} options
              */
       value(jid, text = '', quoted, options) {
@@ -705,7 +705,7 @@ END:VCARD
              * @param {String} footer
              * @param {Buffer} buffer
              * @param {String[] | String[][]} buttons
-             * @param {import("baileys").proto.WebMessageInfo} quoted
+             * @param {import('@whiskeysockets/baileys').proto.WebMessageInfo} quoted
              * @param {Object} options
              */
    /*   async value(jid, text = '', footer = '', buffer, buttons, quoted, options) {
@@ -869,34 +869,7 @@ sendList: {
         await conn.relayMessage(jid, { viewOnceMessage: { message } }, {});
     }
 },
-
-sendEvent: {
-            async value(jid, text, des, loc, link) {
-let msg = generateWAMessageFromContent(jid, {
-        messageContextInfo: {
-            messageSecret: randomBytes(32)
-        },
-        eventMessage: {
-            isCanceled: false,
-            name: text,
-            description: des,
-            location: {
-                degreesLatitude: 0,
-                degreesLongitude: 0,
-                name: loc
-            },
-            joinLink: link,
-            startTime: 'm.messageTimestamp'
-        }
-    }, {});
-
-    conn.relayMessage(jid, msg.message, {
-          messageId: msg.key.id,
-        })
-            },
-            enumerable: true
-        },
-
+            
     sendPoll: {
       async value(jid, name = '', optiPoll, options) {
         if (!Array.isArray(optiPoll[0]) && typeof optiPoll[0] === 'string') optiPoll = [optiPoll];
@@ -923,7 +896,7 @@ let msg = generateWAMessageFromContent(jid, {
              * @param {String|string[]} call
              * @param {String|string[]} callText
              * @param {String[][]} buttons
-             * @param {import("baileys").proto.WebMessageInfo} quoted
+             * @param {import('@whiskeysockets/baileys').proto.WebMessageInfo} quoted
              * @param {Object} options
              */
       async value(jid, text = '', footer = '', buffer, url, urlText, call, callText, buttons, quoted, options) {
@@ -1013,7 +986,7 @@ let msg = generateWAMessageFromContent(jid, {
              * @param {String|string[]} call
              * @param {String|string[]} callText
              * @param {String[][]} buttons
-             * @param {import("baileys").proto.WebMessageInfo} quoted
+             * @param {import('@whiskeysockets/baileys').proto.WebMessageInfo} quoted
              * @param {Object} options
              */
       async value(jid, text = '', footer = '', buffer, url, urlText, url2, urlText2, buttons, quoted, options) {
@@ -1095,7 +1068,7 @@ let msg = generateWAMessageFromContent(jid, {
       /**
              * cMod
              * @param {String} jid
-             * @param {import("baileys").proto.WebMessageInfo} message
+             * @param {import('@whiskeysockets/baileys').proto.WebMessageInfo} message
              * @param {String} text
              * @param {String} sender
              * @param {*} options
@@ -1133,7 +1106,7 @@ let msg = generateWAMessageFromContent(jid, {
       /**
              * Exact Copy Forward
              * @param {String} jid
-             * @param {import("baileys").proto.WebMessageInfo} message
+             * @param {import('@whiskeysockets/baileys').proto.WebMessageInfo} message
              * @param {Boolean|Number} forwardingScore
              * @param {Object} options
              */
@@ -1242,7 +1215,7 @@ let msg = generateWAMessageFromContent(jid, {
       /**
              *
              * @param {String} messageID
-             * @returns {import("baileys").proto.WebMessageInfo}
+             * @returns {import('@whiskeysockets/baileys').proto.WebMessageInfo}
              */
       value(messageID) {
         return Object.entries(conn.chats)
@@ -1285,7 +1258,7 @@ let msg = generateWAMessageFromContent(jid, {
     processMessageStubType: {
       /**
              * to process MessageStubType
-             * @param {import("baileys").proto.WebMessageInfo} m
+             * @param {import('@whiskeysockets/baileys').proto.WebMessageInfo} m
              */
       async value(m) {
         if (!m.messageStubType) return;
@@ -1332,7 +1305,7 @@ let msg = generateWAMessageFromContent(jid, {
     pushMessage: {
       /**
              * pushMessage
-             * @param {import("baileys").proto.WebMessageInfo[]} m
+             * @param {import('@whiskeysockets/baileys').proto.WebMessageInfo[]} m
              */
       async value(m) {
         if (!m) return;
@@ -1349,13 +1322,13 @@ let msg = generateWAMessageFromContent(jid, {
             const chat = conn.decodeJid(message.key.remoteJid || message.message?.senderKeyDistributionMessage?.groupId || '');
             if (message.message?.[mtype]?.contextInfo?.quotedMessage) {
               /**
-                             * @type {import("baileys").proto.IContextInfo}
+                             * @type {import('@whiskeysockets/baileys').proto.IContextInfo}
                              */
               const context = message.message[mtype].contextInfo;
               let participant = conn.decodeJid(context.participant);
               const remoteJid = conn.decodeJid(context.remoteJid || participant);
               /**
-                             * @type {import("baileys").proto.IMessage}
+                             * @type {import('@whiskeysockets/baileys').proto.IMessage}
                              *
                              */
               const quoted = message.message[mtype].contextInfo.quotedMessage;
@@ -1429,7 +1402,7 @@ let msg = generateWAMessageFromContent(jid, {
     serializeM: {
       /**
              * Serialize Message, so it easier to manipulate
-             * @param {import("baileys").proto.WebMessageInfo} m
+             * @param {import('@whiskeysockets/baileys').proto.WebMessageInfo} m
              */
       value(m) {
         return smsg(conn, m);
@@ -1483,13 +1456,13 @@ let msg = generateWAMessageFromContent(jid, {
 /**
  * Serialize Message
  * @param {ReturnType<typeof makeWASocket>} conn
- * @param {import("baileys").proto.WebMessageInfo} m
+ * @param {import('@whiskeysockets/baileys').proto.WebMessageInfo} m
  * @param {Boolean} hasParent
  */
 export function smsg(conn, m, hasParent) {
   if (!m) return m;
   /**
-     * @type {import("baileys").proto.WebMessageInfo}
+     * @type {import('@whiskeysockets/baileys').proto.WebMessageInfo}
      */
   const M = proto.WebMessageInfo;
   m = M.fromObject(m);
@@ -1531,8 +1504,7 @@ export function serialize() {
     },
     isBaileys: {
       get() {
-        return (this?.fromMe || areJidsSameUser(this.conn?.user.id, this.sender)) && this.id.startsWith('3EB0') && (this.id.length === 20 || this.id.length === 22 || this.id.length === 12) || false;
-	/*this.id?.length === 16 || this.id?.startsWith('3EB0') && this.id?.length === 12 || false;*/ 
+        return this.id?.length === 16 || this.id?.startsWith('3EB0') && this.id?.length === 12 || false;
       },
     },
     chat: {
@@ -1647,9 +1619,8 @@ export function serialize() {
             enumerable: true,
           },
           isBaileys: {
-            get() {  
-              return (this?.fromMe || areJidsSameUser(this.conn?.user.id, this.sender)) && this.id.startsWith('3EB0') && (this.id.length === 20 || this.id.length === 22 || this.id.length === 12) || false;
-	      /*this.id?.length === 16 || this.id?.startsWith('3EB0') && this.id.length === 12 || false;*/
+            get() {
+              return this.id?.length === 16 || this.id?.startsWith('3EB0') && this.id.length === 12 || false;
             },
             enumerable: true,
           },
@@ -1973,9 +1944,9 @@ function getRandom() {
 
 
 /**
- * @deprecated use the operator ?? instead
- * - (null || undefined) ?? 'idk'
+ * ??
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator
+ * @return {boolean}
  */
 function nullish(args) {
   return !(args !== null && args !== undefined);
