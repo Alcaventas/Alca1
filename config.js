@@ -10,7 +10,6 @@ global.confirmCode = ""
 // Cambiar a true si el Bot responde a sus comandos con otros comandos.
 // Cambiar a false para usar el Bot desde el mismo numero del Bot.
 // Error de m.isBaileys marcado como false fix temporal
-global.isBaileysFail = false
 
 global.defaultLenguaje = 'es';
 
@@ -21,15 +20,12 @@ global.owner = [
 global.suittag = ['528241264763'];
 global.prems = ['528241264763'];
 
-// API
-global.BASE_API_DELIRIUS = "https://deliriusapi-official.vercel.app";
-
 global.packname = 'Sticker';
 global.author = '✔️𝗔𝗹𝗰𝗮𝗯𝗼𝘁';
-global.wm = 'https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31';
-global.titulowm = 'https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31';
-global.titulowm2 = `https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31`
-global.igfg = 'https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31';
+global.wm = '✔️𝗔𝗹𝗰𝗮𝗯𝗼𝘁';
+global.titulowm = '✔️𝗔𝗹𝗰𝗮𝗯𝗼𝘁';
+global.titulowm2 = `✔️𝗔𝗹𝗰𝗮𝗯𝗼𝘁
+global.igfg = '✔️𝗔𝗹𝗰𝗮𝗯𝗼𝘁';
 global.wait = '*_[ ⏳ ] Cargando..._*';
 
 /*global.imagen1 = fs.createReadStream('./src/assets/images/menu/languages/es/menu.png');
@@ -55,12 +51,12 @@ global.mes = d.toLocaleDateString('es', {month: 'long'});
 global.año = d.toLocaleDateString('es', {year: 'numeric'});
 global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
 //* ****************************
-global.wm2 = `${dia} ${fecha}\nhttps://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31`;
-global.gt = 'https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31';
-global.mysticbot = 'https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31';
-global.channel = 'https://whatsapp.com/channel/0029Vaein6eInlqIsCXpDs3y';
-global.md = 'https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31';
-global.mysticbot = 'https://chat.whatsapp.com/JdZt0ICENcS44BLkP78C31';
+global.wm2 = `${dia} ${fecha}\n@Alcashop.ff;
+global.gt = '✔️𝗔𝗹𝗰𝗮𝗯𝗼𝘁';
+global.mysticbot = '✔️𝗔𝗹𝗰𝗮𝗯𝗼𝘁';
+global.channel = '✔️𝗔𝗹𝗰𝗮𝗯𝗼𝘁';
+global.md = '✔️𝗔𝗹𝗰𝗮𝗯𝗼𝘁';
+global.mysticbot = '✔️𝗔𝗹𝗰𝗮𝗯𝗼𝘁';
 global.waitt = '*_[ ⏳ ] Cargando..._*';
 global.waittt = '*_[ ⏳ ] Cargando..._*';
 global.waitttt = '*_[ ⏳ ] Cargando..._*';
